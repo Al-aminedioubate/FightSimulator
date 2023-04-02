@@ -29,8 +29,48 @@ class Personnage{
 
 //Classe Magicien herite de la classe Personnage
 class Magicien extends Personnage{
+    //super(pseudo);
+    attaquer(personnage){
+        this.personnage = personnage;
+        personnage.sante -= this.attaque;
+
+        console.log(this.pseudo + " attaque" + [personnage.pseudo] + " en lancant un sort " + this.attaque + " degats");
+    }
+
+    coupSpecial(personnage){
+        this.personnage = personnage;
+        personnage.sante -= this.attaque * 5;
+
+        console.log(this.pseudo + " attaque avec son coup special puissance des arcanes " + [personnage.pseudo] + (this.attaque * 5) + " degats");
+
+    }
+    evoluer();
+    verifierSanter();
+}
+
+//Classe Guerrier herite de la classe Personnage
+class Guerrier extends Personnage{
     super(pseudo);
     attaquer(personnage){
         this.personnage = personnage;
+        personnage.sante -= this.attaque;
+
+        console.log(this.pseudo + " attaque" + [personnage.pseudo] + " en lancant un sort " + this.attaque + " degats");
     }
+
+    coupSpecial(personnage){
+        this.personnage = personnage;
+        personnage.sante -= this.attaque * 5;
+
+        console.log(this.pseudo + " attaque avec son coup special puissance des arcanes " + [personnage.pseudo] + (this.attaque * 5) + " degats");
+
+    }
+    evoluer();
+    verifierSanter();
 }
+
+//Combat
+var gandalf = new Magicien('Gandalf');
+var thor = new Guerrier('Thor');
+
+console.log(thor.informations);
